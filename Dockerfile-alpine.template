@@ -116,7 +116,8 @@ COPY 20-envsubst-on-templates.sh /docker-entrypoint.d
 COPY 30-tune-worker-processes.sh /docker-entrypoint.d
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
-EXPOSE 80
+# The below `EXPOSE 80` line has been commented out as it prevents from running nginx in host network_mode when running on a Synology NAS
+#EXPOSE 80
 
 STOPSIGNAL SIGQUIT
 
